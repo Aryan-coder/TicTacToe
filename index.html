@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="win-message" >
+        <div class="inline">
+            <h1 id="win-player" ></h1>
+            <h1 id="win-text">Wins!</h1>
+        </div>
+        <button onclick="playAgain()">
+                <?xml version="1.0"?><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px">    <path d="M 2 2 L 4.9394531 4.9394531 C 3.1262684 6.7482143 2 9.2427079 2 12 C 2 17.514 6.486 22 12 22 C 17.514 22 22 17.514 22 12 C 22 6.486 17.514 2 12 2 L 12 4 C 16.411 4 20 7.589 20 12 C 20 16.411 16.411 20 12 20 C 7.589 20 4 16.411 4 12 C 4 9.7940092 4.9004767 7.7972757 6.3496094 6.3496094 L 9 9 L 9 2 L 2 2 z"/></svg>
+        </button>
+        <span>Play Again</span>
+    </div>
+    <div id="page">
+            <div id="playarea">
+        <div class="container">
+            <div class="crosses">
+                <div class="symbol">
+                    <div class="cross drag" id="drag-0" >
+                        <div class="leftline" ></div>
+                        <div class="rightline" ></div>
+                    </div>
+                </div>
+                <div class="symbol">
+                    <div class="cross drag" id="drag-1" >
+                        <div class="leftline" ></div>
+                        <div class="rightline" ></div>
+                    </div>
+                </div>
+                <div class="symbol">
+                    <div class="cross drag" id="drag-2" >
+                        <div class="leftline" ></div>
+                        <div class="rightline" ></div>
+                    </div>
+                </div>
+            </div>
+            <div class="crosses">
+                <div class="symbol">
+                    <div class="cross drag" id="drag-3" >
+                        <div class="leftline" ></div>
+                        <div class="rightline" ></div>
+                    </div>
+                </div>
+                <div class="symbol">
+                    <div class="cross drag" id="drag-4" >
+                        <div class="leftline" ></div>
+                        <div class="rightline" ></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="table" >
+            <div class="row" >
+                <div id="col-0-0" class="col left top" ></div>
+                <div id="col-0-1" class="col mid top" ></div>
+                <div id="col-0-2" class="col right top" ></div>
+            </div>
+            <div class="row" >
+                <div id="col-1-0" class="col left" ></div>
+                <div id="col-1-1" class="col" ></div>
+                <div id="col-1-2" class="col right" ></div>
+            </div>
+            <div class="row" >
+                <div id="col-2-0" class="col left bottom" ></div>
+                <div id="col-2-1" class="col bottom" ></div>
+                <div id="col-2-2" class="col right bottom" ></div>
+            </div>
+        </div>
+        <div class="container" >
+            <div class="circles">
+                <div class="symbol" >
+                    <div class="circle drag" id="drag-5"></div>
+                </div>
+                <div class="symbol" >
+                    <div class="circle drag" id="drag-6"></div>
+                </div>
+            </div>
+            <div class="circles">
+                <div class="symbol" >
+                    <div class="circle drag" id="drag-7"></div>
+                </div>
+                <div class="symbol" >
+                    <div class="circle drag" id="drag-8"></div>
+                </div>
+                <div class="symbol" >
+                    <div class="circle drag" id="drag-9"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="script.js" ></script>
+</body>
+</html>
