@@ -200,14 +200,9 @@ body{
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        position: relative;
-    }
-
-    #playarea{
-        display: flex;
-        flex-direction: column;
         align-items: center;
-        justify-content: space-between;
+        position: relative;
+        margin-top: -300px;
     }
 
     .table{
@@ -226,7 +221,6 @@ body{
     .crosses{
         display: flex;
         flex-direction: row;
-        margin-top: -100px;
     }
     .circles{
         display: flex;
