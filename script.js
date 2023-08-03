@@ -7,6 +7,7 @@ const columns = document.getElementsByClassName('col')
 let selectedElement = null
 let numOfTurnsLeft = 9
 let turn = ''
+let messageAppeared = false
 
 let table = [
     [0.1, 0.1, 0.1],
@@ -25,10 +26,17 @@ addEventListener('resize', e=>{
 // arrainging symbols
 arrangeElements()
 function arrangeElements(){
-    for(let element of draggableElements){
-        symbolPosition = symbols[element.id.split('-')[1]].getClientRects()[0]
-        element.style.top = symbolPosition.top+'px'
-        element.style.left = symbolPosition.left+'px'
+    if(document.body.offsetWidth<1000){
+        document.getElementById('incompatable-message').style.display = 'flex'
+        for(let element of draggableElements){
+            element.style.display = 'none'
+        }
+    }else{
+        for(let element of draggableElements){
+            symbolPosition = symbols[element.id.split('-')[1]].getClientRects()[0]
+            element.style.top = symbolPosition.top+'px'
+            element.style.left = symbolPosition.left+'px'
+        }
     }
 }
 
@@ -43,6 +51,10 @@ for(let element of draggableElements){
 
     // adding event to pick the symbol
     element.addEventListener('mousedown', e=>{
+        if(e.target.placed == false && e.target.className.includes(turn)){
+            selectedElement = element
+            selectedElement.grabbed = true
+        }
         if(e.target.placed == false && e.target.className.includes(turn)){
             selectedElement = element
             selectedElement.grabbed = true
@@ -136,15 +148,17 @@ function playAgain(){
 }
 
 function showWinMessage(symbol){
-    const container = document.getElementsByClassName('container')
-    if(symbol==null){
-        document.getElementById('win-text').innerText = 'Draw!'
+    if(!messageAppeared){
+        messageAppeared = true
+        if(symbol==null){
+            document.getElementById('win-text').innerText = 'Draw!'
+        }
+        else{
+            document.getElementById('win-player').innerText = symbol
+        }
+        setTimeout(()=>{
+            document.getElementById('win-message').style.display = 'flex'
+            document.getElementById('page').style.filter = 'blur(10px)'
+        },300)
     }
-    else{
-        document.getElementById('win-player').innerText = symbol
-    }
-    setTimeout(()=>{
-        document.getElementById('win-message').style.display = 'flex'
-        document.getElementById('page').style.filter = 'blur(10px)'
-    },300)
 }
