@@ -3,6 +3,7 @@ body{
     height: 100vh;
     overflow: hidden;
     background-image: linear-gradient(#252525, rgb(22, 22, 61), #252525);
+    margin: 0;
 }
 
 
@@ -193,45 +194,7 @@ body{
     filter: blur(10px);
 }
 
-@media screen and (max-width: 1000px) {
 
-    body{
-        overflow-y: scroll;
-    }
-
-    #playarea{
-        width: 100%;
-        height: 60%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        position: relative;
-        margin-top: -300px;
-    }
-
-    .table{
-        margin-top: 20px;
-        margin-bottom: 50px;
-        z-index: 0;
-    }
-
-
-    .container{
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        position: relative;
-    }
-    .crosses{
-        display: flex;
-        flex-direction: row;
-    }
-    .circles{
-        display: flex;
-        flex-direction: row;
-    }
-}
 
 
 #win-message{
@@ -282,4 +245,23 @@ body{
 .inline{
     display: flex;
     gap: 20px;
+}
+
+#incompatable-message{
+    width: 100%;
+    height: 100%;
+    background-image: (#252525, rgb(22, 22, 61), #252525);
+    z-index: 100;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: xx-large;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    margin-top: -100px;
+    flex-direction: column;
+}
+
+#incompatable-message p{
+    text-align: center;
 }
